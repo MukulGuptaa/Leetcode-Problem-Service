@@ -1,0 +1,22 @@
+{
+  "name": "leetcode-problem-service",
+  "version": "1.0.0",
+  "description": "Admin service to manage problems of Leetcode platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MukulGuptaa/Leetcode-Problem-Service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MukulGuptaa/Leetcode-Problem-Service/issues"
+  },
+  "homepage": "https://github.com/MukulGuptaa/Leetcode-Problem-Service#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
