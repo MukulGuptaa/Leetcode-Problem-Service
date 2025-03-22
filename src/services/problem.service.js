@@ -33,6 +33,11 @@ class ProblemService{
         return problem;
     }
 
+    async updateProblem(id, problemData){
+        const problem = await this.problemRespository.updateProblem(id, problemData);
+        return problem;
+    }
+
 
 }
 

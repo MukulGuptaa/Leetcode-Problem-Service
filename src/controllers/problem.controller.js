@@ -51,9 +51,15 @@ async function getProblems(req, res, next){
     }
 }
 
-function updateProblem(req, res, next){
+async function updateProblem(req, res, next){
     try{
-        throw new NotImplementedError("updateProblem");
+        const problem = await problemService.updateProblem(req.params.id, req.body);
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully updated a problem',
+            error: {},
+            data: problem
+        });
     } catch(error) {
         next(error);
     }
@@ -66,7 +72,7 @@ async function deleteProblem(req, res, next){
             success: true,
             message: 'Successfully deleted a problem',
             error: {},
-            data: req.params.id
+            data: req.params.id// check this
         });
     } catch(error) {
         next(error);

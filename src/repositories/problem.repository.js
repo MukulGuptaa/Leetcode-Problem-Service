@@ -53,6 +53,19 @@ class ProblemRepository{
         }
     }
 
+    async updateProblem(id, problemData){
+        try {
+            const problem = await Problem.findByIdAndUpdate(id, problemData, {new: true}); // check this
+            if(!problem){
+                throw new NotFoundError("Problem", id);
+            }
+            return problem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
 }
 
 module.exports = ProblemRepository;
