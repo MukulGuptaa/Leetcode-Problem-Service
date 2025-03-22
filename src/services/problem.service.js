@@ -28,6 +28,11 @@ class ProblemService{
         return problem; 
     }
 
+    async deleteProblem(id){
+        const problem = await this.problemRespository.deleteProblem(id);
+        return problem;
+    }
+
 
 }
 
