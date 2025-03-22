@@ -31,9 +31,15 @@ function getProblem(req, res, next){
     }
 }
 
-function getProblems(req, res, next){
+async function getProblems(req, res, next){
     try{
-        throw new NotImplementedError("getProblems");
+        const problems = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully fetched all problems',
+            error: {},
+            data: problems
+        });
     } catch(error) {
         next(error);
     }

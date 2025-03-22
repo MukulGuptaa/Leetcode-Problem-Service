@@ -8,19 +8,21 @@ class ProblemService{
 
     async createProblem(problemData){
 
-        try{
-            // 1. sanitize the marldown for description
-            problemData.description = sanitizeMarkdown.markdownSanitizer(problemData.description);
+        // 1. sanitize the marldown for description
+        problemData.description = sanitizeMarkdown.markdownSanitizer(problemData.description);
 
-            const problem = await this.problemRespository.createProblem(problemData);
-            return problem;
+        const problem = await this.problemRespository.createProblem(problemData);
+        return problem;
             
-        } catch(error) {
-            console.log(error);
-            throw error;
-        }
+    }
+
+    async getAllProblems(){
+    
+        const problems = await this.problemRespository.getAllProblems();
+        return problems;
         
     }
+
 
 }
 
